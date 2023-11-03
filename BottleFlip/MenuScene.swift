@@ -37,7 +37,7 @@ class MenuScene: SKScene {
         let highScoreLabelNode = LabelNode(
             text: highScore.formatted(),
             fontSize: 50,
-            position: CGPoint(x: self.frame.midX, y: self.frame.maxY - 250),
+            position: CGPoint(x: self.frame.midX - 110, y: self.frame.maxY - 300),
             fontColor: .purple
         )
         self.addChild(highScoreLabelNode)
