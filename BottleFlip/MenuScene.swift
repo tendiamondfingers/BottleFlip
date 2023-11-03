@@ -9,6 +9,8 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
+    var highScore = 0
+    
     override func didMove(to view: SKView) {
         self.backgroundColor = .systemCyan
         
@@ -24,13 +26,21 @@ class MenuScene: SKScene {
         )
         self.addChild(logo)
         
-        let bestScoreLabelNode = SKLabelNode(fontNamed: "Menlo")
-        bestScoreLabelNode.position = CGPoint(x: self.frame.midX - 100, y: self.frame.maxY - 230)
-        bestScoreLabelNode.text = "Best result: "
-        bestScoreLabelNode.fontSize = 20
-        bestScoreLabelNode.fontColor = .purple
-        
+       let bestScoreLabelNode = LabelNode(
+        text: "Best result: ",
+        fontSize: 20,
+        position: CGPoint(x: self.frame.midX - 100, y: self.frame.maxY - 250),
+        fontColor: .purple
+       )
         self.addChild(bestScoreLabelNode)
+        
+        let highScoreLabelNode = LabelNode(
+            text: highScore.formatted(),
+            fontSize: 50,
+            position: CGPoint(x: self.frame.midX, y: self.frame.maxY - 250),
+            fontColor: .purple
+        )
+        self.addChild(highScoreLabelNode)
         
     }
 }
