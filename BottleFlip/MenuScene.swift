@@ -10,7 +10,7 @@ import SpriteKit
 class MenuScene: SKScene {
     
     override func didMove(to view: SKView) {
-        self.backgroundColor = .systemCyan
+        self.backgroundColor = .systemGray
         
         setupUI()
     }
@@ -19,8 +19,8 @@ class MenuScene: SKScene {
         let logo = ButtonNode(
             imageNode: "logo",
             position: CGPoint(x: self.frame.midX, y: self.frame.maxY - 120),
-            xScale: 1,
-            yScale: 1
+            xScale: 0.5,
+            yScale: 0.5
         )
         self.addChild(logo)
         
