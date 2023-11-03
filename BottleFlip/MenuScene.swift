@@ -9,6 +9,8 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
+    var playButtonNode = SKSpriteNode()
+    
     var highScore = 0
     
     override func didMove(to view: SKView) {
