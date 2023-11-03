@@ -16,12 +16,13 @@ class MenuScene: SKScene {
     }
     
     func setupUI() {
-        let logo = SKSpriteNode(imageNamed: "logo")
-        logo.position = CGPoint(x: self.frame.midX, y: self.frame.maxY - 120)
-        logo.xScale = 1
-        logo.yScale = 1
+        let logo = ButtonNode(
+            imageNode: "logo",
+            position: CGPoint(x: self.frame.midX, y: self.frame.maxY - 120),
+            xScale: 1,
+            yScale: 1
+        )
         self.addChild(logo)
+        
     }
-    
-    
 }
