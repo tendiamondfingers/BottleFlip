@@ -16,6 +16,7 @@
 		4B76E4662AF512FA00FED05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E4642AF512FA00FED05F /* LaunchScreen.storyboard */; };
 		4B76E46D2AF518BD00FED05F /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E46C2AF518BD00FED05F /* MenuScene.swift */; };
 		4B76E46F2AF518F500FED05F /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E46E2AF518F500FED05F /* MenuScene.sks */; };
+		4B76E4712AF5207A00FED05F /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E4702AF5207A00FED05F /* ButtonNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		4B76E4652AF512FA00FED05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B76E46C2AF518BD00FED05F /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		4B76E46E2AF518F500FED05F /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
+		4B76E4702AF5207A00FED05F /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				4B76E4572AF512F900FED05F /* GameScene.sks */,
 				4B76E45B2AF512F900FED05F /* GameScene.swift */,
 				4B76E46C2AF518BD00FED05F /* MenuScene.swift */,
+				4B76E4702AF5207A00FED05F /* ButtonNode.swift */,
 				4B76E46E2AF518F500FED05F /* MenuScene.sks */,
 				4B76E45D2AF512F900FED05F /* GameViewController.swift */,
 				4B76E45F2AF512F900FED05F /* Main.storyboard */,
@@ -151,6 +154,7 @@
 				4B76E46D2AF518BD00FED05F /* MenuScene.swift in Sources */,
 				4B76E45E2AF512F900FED05F /* GameViewController.swift in Sources */,
 				4B76E4562AF512F900FED05F /* AppDelegate.swift in Sources */,
+				4B76E4712AF5207A00FED05F /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
