@@ -8,7 +8,7 @@
 import SpriteKit
 
 class MenuScene: SKScene {
-    // need set play button
+    
     var playButtonNode = SKSpriteNode()
     
     var highScore = 0
@@ -61,6 +61,13 @@ class MenuScene: SKScene {
         )
         self.addChild(flipsCountLabelNode)
         
+        playButtonNode = ButtonNode(
+            imageNode: "play_button",
+            position: CGPoint(x: self.frame.midX, y: self.frame.midY - 15),
+            xScale: 0.9,
+            yScale: 0.9
+        )
+        self.addChild(playButtonNode)
         
         
     }
