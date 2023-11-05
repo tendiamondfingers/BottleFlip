@@ -7,15 +7,23 @@
 
 import SpriteKit
 
-class MenuScene: SKScene {
+final class MenuScene: SKScene {
     
     var playButtonNode = SKSpriteNode()
+    var tableNode = SKSpriteNode()
+    var bottleNode = SKSpriteNode()
+    var leftButtonNode = SKSpriteNode()
+    var rightButtonNode = SKSpriteNode()
     
     var highScore = 0
     var totalFlips = 0
+    var bottles = [Bottle]()
+    var selectedBottleIndex = 0
     
     override func didMove(to view: SKView) {
         self.backgroundColor = .systemCyan
+        
+        bottles = BottleController.readItems()
         
         setupUI()
     }
@@ -69,6 +77,68 @@ class MenuScene: SKScene {
         )
         self.addChild(playButtonNode)
         
+        tableNode = ButtonNode(
+            imageNode: "table",
+            position: CGPoint(x: self.frame.midX, y: self.frame.minY + 60),
+            xScale: 0.45,
+            yScale: 0.45
+        )
+        tableNode.zPosition = 3
+        self.addChild(tableNode)
         
+        selectedBottleIndex = BottleController.getSaveBottleIndex()
+        let selectedBottle = bottles[selectedBottleIndex]
+        
+        bottleNode = SKSpriteNode(imageNamed: "bottle")
+        bottleNode.zPosition = 10
+        self.addChild(bottleNode)
+        
+        //left button
+        leftButtonNode = ButtonNode(
+            imageNode: "left_button",
+            position: CGPoint(x: self.frame.midX + leftButtonNode.size.width - 110, y: self.frame.minY - leftButtonNode.size.height + 200),
+            xScale: 1.2,
+            yScale: 1.2
+        )
+        self.changeButon(leftButtonNode, state: false)
+        self.addChild(leftButtonNode)
+        
+        rightButtonNode = ButtonNode(
+            imageNode: "right_button",
+            position: CGPoint(x: self.frame.midX + rightButtonNode.size.width + 110, y: self.frame.minY - rightButtonNode.size.height + 200),
+            xScale: 1.2,
+            yScale: 1.2
+        )
+        self.changeButon(rightButtonNode, state: true)
+        self.addChild(rightButtonNode)
+        
+        self.updateSelectedBottle(selectedBottle)
+        
+    }
+    
+    private func changeButon(_ buttonNode: SKSpriteNode, state: Bool) {
+        var buttonColor = UIColor.gray.withAlphaComponent(0.3)
+        
+        if state {
+            buttonColor = .gray
+        }
+        
+        buttonNode.color = buttonColor
+        buttonNode.colorBlendFactor = 1
+    }
+    
+     func updateSelectedBottle(_ bottle: Bottle) {
+         if let spriteName = bottle.Sprite {
+             bottleNode.texture = SKTexture(imageNamed: spriteName)
+         } else {
+             print("bottle.Sprite is nil")
+         }
+
+        
+        bottleNode.size = CGSize(
+            width: bottleNode.texture!.size().width * CGFloat(bottle.XScale!.floatValue),
+            height: bottleNode.texture!.size().height * CGFloat(bottle.YScale!.floatValue))
+         
+         bottleNode.position = CGPoint(x: self.frame.midX, y: self.frame.minY + bottleNode.size.height / 2 + 126)
     }
 }

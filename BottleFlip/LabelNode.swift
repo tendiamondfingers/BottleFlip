@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class LabelNode: SKLabelNode {
+final class LabelNode: SKLabelNode {
     
     convenience init(text: String, fontSize: CGFloat, position: CGPoint, fontColor: UIColor) {
         self.init(fontNamed: fontMenlo)

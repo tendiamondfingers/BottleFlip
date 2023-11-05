@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class ButtonNode: SKSpriteNode {
+final class ButtonNode: SKSpriteNode {
         
     var originalScale: CGFloat = 0
     
