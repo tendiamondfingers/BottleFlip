@@ -89,7 +89,7 @@ final class MenuScene: SKScene {
         selectedBottleIndex = BottleController.getSaveBottleIndex()
         let selectedBottle = bottles[selectedBottleIndex]
         
-        bottleNode = SKSpriteNode(imageNamed: "bottle")
+        bottleNode = SKSpriteNode(imageNamed: selectedBottle.Sprite!)
         bottleNode.zPosition = 10
         self.addChild(bottleNode)
         
@@ -127,18 +127,13 @@ final class MenuScene: SKScene {
         buttonNode.colorBlendFactor = 1
     }
     
-     func updateSelectedBottle(_ bottle: Bottle) {
-         if let spriteName = bottle.Sprite {
-             bottleNode.texture = SKTexture(imageNamed: spriteName)
-         } else {
-             print("bottle.Sprite is nil")
-         }
-
+    func updateSelectedBottle(_ bottle: Bottle) {
+        let spriteName = SKTexture(imageNamed: bottle.Sprite!)
         
         bottleNode.size = CGSize(
             width: bottleNode.texture!.size().width * CGFloat(bottle.XScale!.floatValue),
             height: bottleNode.texture!.size().height * CGFloat(bottle.YScale!.floatValue))
-         
-         bottleNode.position = CGPoint(x: self.frame.midX, y: self.frame.minY + bottleNode.size.height / 2 + 126)
+        
+        bottleNode.position = CGPoint(x: self.frame.midX, y: self.frame.minY + bottleNode.size.height / 2 + 126)
     }
 }

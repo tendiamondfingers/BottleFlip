@@ -16,7 +16,7 @@ final class Bottle {
     var MinFlips: NSNumber?
     
     init(_ bottleDictionary: NSDictionary) {
-        self.Sprite = bottleDictionary["Name"] as? String
+        self.Sprite = bottleDictionary["Sprite"] as? String
         self.Mass = bottleDictionary["Mass"] as? NSNumber
         self.Resistance = bottleDictionary["Resistance"] as? NSNumber
         self.XScale = bottleDictionary["XScale"] as? NSNumber
