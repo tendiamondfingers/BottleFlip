@@ -99,34 +99,31 @@ final class MenuScene: SKScene {
         leftButtonNode = ButtonNode(
             imageNode: "left_button",
             position: CGPoint(x: self.frame.midX + leftButtonNode.size.width - 110, y: self.frame.minY - leftButtonNode.size.height + 200),
-            xScale: 1.2,
-            yScale: 1.2
+            xScale: 0.5,
+            yScale: 0.5
         )
-        self.changeButon(leftButtonNode, state: false)
+        self.changeButon(leftButtonNode, isEnabled: false)
         self.addChild(leftButtonNode)
         
         rightButtonNode = ButtonNode(
             imageNode: "right_button",
             position: CGPoint(x: self.frame.midX + rightButtonNode.size.width + 110, y: self.frame.minY - rightButtonNode.size.height + 200),
-            xScale: 1.2,
-            yScale: 1.2
+            xScale: 0.5,
+            yScale: 0.5
         )
-        self.changeButon(rightButtonNode, state: true)
+        self.changeButon(rightButtonNode, isEnabled: true)
         self.addChild(rightButtonNode)
         
         self.updateSelectedBottle(selectedBottle)
         
     }
     
-    private func changeButon(_ buttonNode: SKSpriteNode, state: Bool) {
-        var buttonColor = UIColor.gray.withAlphaComponent(0.3)
-        
-        if state {
-            buttonColor = .gray
+    private func changeButon(_ buttonNode: SKSpriteNode, isEnabled: Bool) {
+        if isEnabled {
+            buttonNode.colorBlendFactor = 0.0
+        } else {
+            buttonNode.colorBlendFactor = 0.7
         }
-        
-        buttonNode.color = buttonColor
-        buttonNode.colorBlendFactor = 1
     }
     
    private func updateSelectedBottle(_ bottle: Bottle) {
@@ -145,8 +142,8 @@ final class MenuScene: SKScene {
     }
     
     private func updateArrowsState() {
-        self.changeButon(leftButtonNode, state: Bool(truncating: selectedBottleIndex as NSNumber))
-        self.changeButon(rightButtonNode, state: selectedBottleIndex != totalBottles - 1)
+        self.changeButon(leftButtonNode, isEnabled: Bool(truncating: selectedBottleIndex as NSNumber))
+        self.changeButon(rightButtonNode, isEnabled: selectedBottleIndex != totalBottles - 1)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
