@@ -127,7 +127,7 @@ final class MenuScene: SKScene {
         buttonNode.colorBlendFactor = 1
     }
     
-    func updateSelectedBottle(_ bottle: Bottle) {
+   private func updateSelectedBottle(_ bottle: Bottle) {
         let spriteName = SKTexture(imageNamed: bottle.Sprite!)
         
         bottleNode.size = CGSize(
@@ -135,5 +135,11 @@ final class MenuScene: SKScene {
             height: bottleNode.texture!.size().height * CGFloat(bottle.YScale!.floatValue))
         
         bottleNode.position = CGPoint(x: self.frame.midX, y: self.frame.minY + bottleNode.size.height / 2 + 126)
+        
+        self.updateArrowsState()
+    }
+    
+    private func updateArrowsState() {
+        
     }
 }
