@@ -148,16 +148,32 @@ final class MenuScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            
             let location = touch.location(in: self)
             
             if leftButtonNode.contains(location) {
+                leftButtonNode.setScale(0.4)
+            }
+            
+            if rightButtonNode.contains(location) {
+                rightButtonNode.setScale(0.4)
+            }
+        }
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            if leftButtonNode.contains(location) {
+                leftButtonNode.setScale(0.5)
                 let prevIndex = selectedBottleIndex - 1
                 if prevIndex >= 0 {
                     self.updateByIndex(prevIndex)
                 }
             }
+            
             if rightButtonNode.contains(location) {
+                rightButtonNode.setScale(0.5)
                 let nextIndex = selectedBottleIndex + 1
                 if nextIndex < totalBottles {
                     self.updateByIndex(nextIndex)
@@ -165,6 +181,8 @@ final class MenuScene: SKScene {
             }
         }
     }
+
+    
     private func updateByIndex(_ index: Int) {
         let bottle = bottles[index]
         selectedBottleIndex = index
