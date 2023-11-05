@@ -19,11 +19,13 @@ final class MenuScene: SKScene {
     var totalFlips = 0
     var bottles = [Bottle]()
     var selectedBottleIndex = 0
+    var totalBottles = 0
     
     override func didMove(to view: SKView) {
         self.backgroundColor = .systemCyan
         
         bottles = BottleController.readItems()
+        totalBottles = bottles.count
         
         setupUI()
     }
@@ -128,18 +130,49 @@ final class MenuScene: SKScene {
     }
     
    private func updateSelectedBottle(_ bottle: Bottle) {
-        let spriteName = SKTexture(imageNamed: bottle.Sprite!)
+       bottleNode.texture = SKTexture(imageNamed: bottle.Sprite!)
         
         bottleNode.size = CGSize(
             width: bottleNode.texture!.size().width * CGFloat(bottle.XScale!.floatValue),
             height: bottleNode.texture!.size().height * CGFloat(bottle.YScale!.floatValue))
         
-        bottleNode.position = CGPoint(x: self.frame.midX, y: self.frame.minY + bottleNode.size.height / 2 + 126)
+        bottleNode.position = CGPoint(
+            x: self.frame.midX,
+            y: self.frame.minY + bottleNode.size.height / 2 + 126
+        )
         
         self.updateArrowsState()
     }
     
     private func updateArrowsState() {
+        self.changeButon(leftButtonNode, state: Bool(truncating: selectedBottleIndex as NSNumber))
+        self.changeButon(rightButtonNode, state: selectedBottleIndex != totalBottles - 1)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            
+            let location = touch.location(in: self)
+            
+            if leftButtonNode.contains(location) {
+                let prevIndex = selectedBottleIndex - 1
+                if prevIndex >= 0 {
+                    self.updateByIndex(prevIndex)
+                }
+            }
+            if rightButtonNode.contains(location) {
+                let nextIndex = selectedBottleIndex + 1
+                if nextIndex < totalBottles {
+                    self.updateByIndex(nextIndex)
+                }
+            }
+        }
+    }
+    private func updateByIndex(_ index: Int) {
+        let bottle = bottles[index]
+        selectedBottleIndex = index
         
+        self.updateSelectedBottle(bottle)
+        BottleController.saveSelectedBottle(selectedBottleIndex)
     }
 }

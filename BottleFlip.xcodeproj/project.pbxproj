@@ -19,9 +19,9 @@
 		4B76E46D2AF518BD00FED05F /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E46C2AF518BD00FED05F /* MenuScene.swift */; };
 		4B76E46F2AF518F500FED05F /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4B76E46E2AF518F500FED05F /* MenuScene.sks */; };
 		4B76E4712AF5207A00FED05F /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76E4702AF5207A00FED05F /* ButtonNode.swift */; };
-		4BAAE5FB2AF7B74300494581 /* Items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BAAE5FA2AF7B74300494581 /* Items.plist */; };
 		4BAAE5FD2AF7B78F00494581 /* Bottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAE5FC2AF7B78F00494581 /* Bottle.swift */; };
 		4BAAE5FF2AF7B8DF00494581 /* BottleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAE5FE2AF7B8DF00494581 /* BottleController.swift */; };
+		4BAAE6012AF7D02B00494581 /* Items.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BAAE6002AF7D02B00494581 /* Items.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,9 +38,9 @@
 		4B76E46C2AF518BD00FED05F /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		4B76E46E2AF518F500FED05F /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		4B76E4702AF5207A00FED05F /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
-		4BAAE5FA2AF7B74300494581 /* Items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Items.plist; sourceTree = "<group>"; };
 		4BAAE5FC2AF7B78F00494581 /* Bottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle.swift; sourceTree = "<group>"; };
 		4BAAE5FE2AF7B8DF00494581 /* BottleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleController.swift; sourceTree = "<group>"; };
+		4BAAE6002AF7D02B00494581 /* Items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Items.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				4B76E45F2AF512F900FED05F /* Main.storyboard */,
 				4B76E4622AF512FA00FED05F /* Assets.xcassets */,
 				4B76E4642AF512FA00FED05F /* LaunchScreen.storyboard */,
-				4BAAE5FA2AF7B74300494581 /* Items.plist */,
+				4BAAE6002AF7D02B00494581 /* Items.plist */,
 			);
 			path = BottleFlip;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B76E4612AF512F900FED05F /* Main.storyboard in Resources */,
-				4BAAE5FB2AF7B74300494581 /* Items.plist in Resources */,
+				4BAAE6012AF7D02B00494581 /* Items.plist in Resources */,
 				4B76E4582AF512F900FED05F /* GameScene.sks in Resources */,
 				4B76E4632AF512FA00FED05F /* Assets.xcassets in Resources */,
 				4B76E46F2AF518F500FED05F /* MenuScene.sks in Resources */,

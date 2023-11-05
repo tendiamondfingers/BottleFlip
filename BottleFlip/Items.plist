@@ -11,7 +11,7 @@
 		<real>0.45</real>
 		<key>YScale</key>
 		<real>0.4</real>
-		<key>Restitution</key>
+		<key>Resistaion</key>
 		<integer>0</integer>
 		<key>MinFlips</key>
 		<integer>0</integer>
@@ -25,7 +25,7 @@
 		<real>0.45</real>
 		<key>YScale</key>
 		<real>0.4</real>
-		<key>Restitution</key>
+		<key>Resistation</key>
 		<real>0.032</real>
 		<key>MinFlips</key>
 		<integer>3</integer>
@@ -53,7 +53,7 @@
 		<real>0.4</real>
 		<key>YScale</key>
 		<real>0.4</real>
-		<key>Restitution</key>
+		<key>Resistation</key>
 		<real>0.12</real>
 		<key>MinFlips</key>
 		<integer>9</integer>
@@ -67,7 +67,7 @@
 		<real>0.32</real>
 		<key>YScale</key>
 		<real>0.32</real>
-		<key>Restitution</key>
+		<key>Resistation</key>
 		<real>0.07000000000000001</real>
 		<key>MinFlips</key>
 		<integer>12</integer>
