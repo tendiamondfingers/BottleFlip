@@ -39,12 +39,12 @@ final class MenuScene: SKScene {
         )
         self.addChild(logo)
         
-       let bestScoreLabelNode = LabelNode(
-        text: "Best result",
-        fontSize: 20,
-        position: CGPoint(x: self.frame.midX - 100, y: self.frame.maxY - 250),
-        fontColor: .purple
-       )
+        let bestScoreLabelNode = LabelNode(
+            text: "Best result",
+            fontSize: 20,
+            position: CGPoint(x: self.frame.midX - 100, y: self.frame.maxY - 250),
+            fontColor: .purple
+        )
         self.addChild(bestScoreLabelNode)
         
         let highScoreLabelNode = LabelNode(
@@ -56,10 +56,10 @@ final class MenuScene: SKScene {
         self.addChild(highScoreLabelNode)
         
         let totalFlipsLabelNode = LabelNode(
-         text: "Total flips",
-         fontSize: 20,
-         position: CGPoint(x: self.frame.midX + 100, y: self.frame.maxY - 250),
-         fontColor: .purple
+            text: "Total flips",
+            fontSize: 20,
+            position: CGPoint(x: self.frame.midX + 100, y: self.frame.maxY - 250),
+            fontColor: .purple
         )
         self.addChild(totalFlipsLabelNode)
         
@@ -126,8 +126,8 @@ final class MenuScene: SKScene {
         }
     }
     
-   private func updateSelectedBottle(_ bottle: Bottle) {
-       bottleNode.texture = SKTexture(imageNamed: bottle.Sprite!)
+    private func updateSelectedBottle(_ bottle: Bottle) {
+        bottleNode.texture = SKTexture(imageNamed: bottle.Sprite!)
         
         bottleNode.size = CGSize(
             width: bottleNode.texture!.size().width * CGFloat(bottle.XScale!.floatValue),
@@ -150,21 +150,21 @@ final class MenuScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             
-            if leftButtonNode.contains(location) {
+            if leftButtonNode.contains(location) && leftButtonNode.colorBlendFactor == 0.0 {
                 leftButtonNode.setScale(0.4)
             }
             
-            if rightButtonNode.contains(location) {
+            if rightButtonNode.contains(location) && rightButtonNode.colorBlendFactor == 0.0 {
                 rightButtonNode.setScale(0.4)
             }
         }
     }
-
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             
-            if leftButtonNode.contains(location) {
+            if leftButtonNode.contains(location) && leftButtonNode.colorBlendFactor == 0.0 {
                 leftButtonNode.setScale(0.5)
                 let prevIndex = selectedBottleIndex - 1
                 if prevIndex >= 0 {
@@ -172,7 +172,7 @@ final class MenuScene: SKScene {
                 }
             }
             
-            if rightButtonNode.contains(location) {
+            if rightButtonNode.contains(location) && rightButtonNode.colorBlendFactor == 0.0 {
                 rightButtonNode.setScale(0.5)
                 let nextIndex = selectedBottleIndex + 1
                 if nextIndex < totalBottles {
@@ -181,7 +181,8 @@ final class MenuScene: SKScene {
             }
         }
     }
-
+    
+    
     
     private func updateByIndex(_ index: Int) {
         let bottle = bottles[index]
