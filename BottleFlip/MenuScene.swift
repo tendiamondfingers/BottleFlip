@@ -14,6 +14,8 @@ final class MenuScene: SKScene {
     var bottleNode = SKSpriteNode()
     var leftButtonNode = SKSpriteNode()
     var rightButtonNode = SKSpriteNode()
+    var flipsTagNode = SKSpriteNode()
+    var unlockLabelNode = SKLabelNode()
     
     var highScore = 0
     var totalFlips = 0
@@ -116,6 +118,18 @@ final class MenuScene: SKScene {
         
         self.updateSelectedBottle(selectedBottle)
         
+        // lock node
+        
+        flipsTagNode = ButtonNode(
+            imageNode: "lock",
+            position: CGPoint(x: self.frame.midX + bottleNode.size.width * 0.25,
+                              y: self.frame.minY + bottleNode.size.height / 2 + 94),
+            xScale: 0.3,
+            yScale: 0.3
+        )
+        flipsTagNode.zPosition = 25
+        flipsTagNode.zRotation = 0.3
+        self.addChild(flipsTagNode)
     }
     
     private func changeButon(_ buttonNode: SKSpriteNode, isEnabled: Bool) {
